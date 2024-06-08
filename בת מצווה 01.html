@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./בת מצווה 01.css">
+    <link rel="shortcut icon" href="./תמונות/לוגו גדול.png">
+    <link rel="shortcut icon " href="./תמונות/123.png">
+    <title>הזמנה 01</title>
+</head>
+<body>
+  <header>
+    <div class="logo"></div>
+    <div class="menu">
+        <div class="dropdown">
+            <button class="dropbtn"></button> 
+            <div class="dropdown-content">
+                <button class="b1"><a href="./דף הבית.html">דף הבית</a></button>
+                <button class="b1"><a href="./אודות.html">אודותינו</a></button>
+                <button class="b1"><a href="./אירועים.html">אירועים</a></button>
+                <button class="b1"><a href="./טיפים ורעיונות.html">טיפים ורעיונות</a> </button>
+                <button class="b1"><a href="./צור קשר.html">צור קשר</a></button>
+            </div></div></div>
+</header>
+
+
+<section>
+    <div class="sec1"> 
+        <div class="container">
+          <div class="mySlides">
+            <div class="numbertext">1 / 2</div>
+            <img src="./תמונות/בת מצוה/אילה בת מצוה/קדימה.png" style="width:100%">
+          </div>
+        
+          <div class="mySlides">
+            <div class="numbertext">2 / 2</div>
+            <img src="./תמונות/בת מצוה/אילה בת מצוה/אחורה.png" style="width:100%">
+          </div>
+        
+        
+          <!-- <a class="prev" onclick="plusSlides(-1)">❮</a> -->
+          <a class="next" onclick="plusSlides(1)">❯</a>
+        
+          <div class="caption-container">
+            <p id="caption"></p>
+          </div>
+        
+          <div class="row">
+            <div class="column">
+              <img class="demo cursor" src="./תמונות/בת מצוה/אילה בת מצוה/קדימה.png" style="width:100%" onclick="currentSlide(1)" alt="הזמנה אחורה">
+            </div>
+            <div class="column">
+              <img class="demo cursor" src="./תמונות/בת מצוה/אילה בת מצוה/אחורה.png" style="width:100%" onclick="currentSlide(2)" alt="הזמנה קדימה">
+            </div>
+           
+          </div>
+        </div>
+    </div> 
+
+    <div class="sec2">
+        <div class="text">
+            <h2>~מוצרים משלימים~</h2>
+       </div>
+       
+       <div class="morePic">
+ 
+         <div class="pic">
+             <!-- מזכרת -->
+             <img class="item" src="./תמונות/בת מצוה/אילה בת מצוה/מזכרת.png" style="height: 100%; width: 100%;">
+         </div>
+         <div class="pic">
+             <!-- תודה ששמחתם איתנו -->            
+             <img class="item" src="./תמונות/בת מצוה/אילה בת מצוה/תודה.png" style="height: 100%; width: 100%;">
+         </div>
+         <div class="pic">
+             <!-- מדבקות -->
+             <img class="item" src="./תמונות/בת מצוה/אילה בת מצוה/מדבקה.png" style="height: 100%; width: 100%;">
+         </div>
+         <div class="pic">
+          <!-- מדבקות -->
+          <img class="item" src="./תמונות/בת מצוה/אילה בת מצוה/מעטפה.png" style="height: 100%; width: 100%;">
+      </div>
+       </div>
+    </div>
+</section>       
+
+<footer>
+  <div class="details"><img id="d" src="./תמונות/פרטים.png"></div>
+  <div class="icons"><a href="./שגיאת התחברות.html" target="_blank">
+  <img id="i" src="./תמונות/סמלים.png"></a></div>
+</footer> 
+
+
+</body>
+
+
+<script>
+    let slideIndex = 1;
+    showSlides(slideIndex);
+    
+    function plusSlides(n) {
+      showSlides(slideIndex += n);
+    }
+    
+    function currentSlide(n) {
+      showSlides(slideIndex = n);
+    }
+    
+    function showSlides(n) {
+      let i;
+      let slides = document.getElementsByClassName("mySlides");
+      let dots = document.getElementsByClassName("demo");
+      let captionText = document.getElementById("caption");
+      if (n > slides.length) {slideIndex = 1}
+      if (n < 1) {slideIndex = slides.length}
+      for (i = 0; i < slides.length; i++) {
+        slides[i].style.display = "none";
+      }
+      for (i = 0; i < dots.length; i++) {
+        dots[i].className = dots[i].className.replace(" active", "");
+      }
+      slides[slideIndex-1].style.display = "block";
+      dots[slideIndex-1].className += " active";
+      captionText.innerHTML = dots[slideIndex-1].alt;
+    }
+    </script>
+    
+</html>
